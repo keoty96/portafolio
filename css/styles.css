@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --fontsize-h1: 48px;
-  --fontsize-body: 20px;
-  --fontfam-body: "Barlow", serif;
-  --lemon-meringue: #F2E8C6;
-  --pastel-gray: #DAD4B5;
-  --deep-dumpling: #982B1C;
-  --maroon: #800000;
+  --fontsize-h1: clamp(2rem, .5692rem + 8.238vw, 13.75rem);
+  --fontsize-body: clamp(1.5rem, .5692rem + 8.238vw, 1.2rem);
+  --fontfam-body: "Cabin", sans-serif;
+  --fontfam-title: "Finger Paint", sans-serif;
+  --primary-text-color: #003b32;
+  --background-color: #f4ebd6;
 }
 
 * {
@@ -16,15 +15,29 @@
   box-sizing: border-box;
 }
 body {
+  background-color: var(--background-color);
   margin: 0;
   text-align: center;
   font-family: var(--fontfam-body);
   font-size: var(--fontsize-body);
   color: var(--maroon);
 }
+nav {
+  position: fixed;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+}
+nav img {
+  height: 90%;
+}
 h1 {
   font-size: var(--fontsize-h1);
   font-weight: 900;
+  margin-bottom: 24px;
 }
 hr {
   border: dotted #ebecf1 6px;
@@ -33,10 +46,11 @@ hr {
   margin: 75px auto;
 }
 section {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 25% 75%;
+  min-height: calc(100vh - 80px);
+  padding: 32px 24px;
+}
+p {
+  margin-bottom: 16px;
 }
 a {
   text-decoration: none;
@@ -44,9 +58,7 @@ a {
   color: #4f98ca;
 }
 .container {
-  height: 100vh;
-  padding: 40px 40px 0;
-  background-color: var(--lemon-meringue);
+  margin-top: 80px;
 }
 .satisfy-regular {
   font-family: var(--fontfam-title);
@@ -56,9 +68,8 @@ section .title {
   font-weight: bold;
   padding-bottom: 25px;
 }
-.projects {
-  display: flex;
-  overflow-x: scroll;
+.project {
+  padding-bottom: 30px;
 }
 /* contenido */
 .content {
