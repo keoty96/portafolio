@@ -46,12 +46,12 @@ hr {
   width: 4%;
   margin: 75px auto;
 }
-section {
+.presentation {
   min-height: calc(100vh - 80px);
   padding: 32px 24px;
 }
-section img {
-  height: 375px;
+.presentation img {
+  height: 320px;
   margin: 32px 0;
 }
 p {
@@ -68,13 +68,59 @@ a {
 .satisfy-regular {
   font-family: var(--fontfam-title);
 }
-section .title {
+.prensentation .title {
   font-size: 1.5rem;
   font-weight: bold;
   padding-bottom: 25px;
 }
+/* project */
+.projects-container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  gap: 32px;
+  padding: 32px;
+}
 .project {
-  padding-bottom: 30px;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 0 16px;
+  max-height: 300px;
+}
+.project img {
+  width: 100%;
+}
+.project-back-side {
+  display: none;
+  font-size: 1rem;
+  padding: 24px;
+  text-align: left;
+}
+.project-front-side {
+  text-align: left;
+}
+.project-headline {
+  font-size: 1.5rem;
+}
+.project-type {
+  font-size: 1rem;
+}
+.project-tools {
+  font-size: 0.8rem;
+}
+.project:hover .project-front-side {
+  display: none;
+}
+.project:hover .project-back-side {
+  display: grid;
+}
+@media (min-width: 768px) {
+  .presentation {
+    min-height: unset;
+  }
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 1024px) {
   nav {
@@ -84,12 +130,12 @@ section .title {
     margin: 140px auto 0;
     max-width: 1200px;
   }
-  section {
+  .prensentation {
     padding: 40px;
   }
 }
 @media (min-width: 1024px) and (max-height: 1024px) {
-  section.presentation {
+  .presentation {
     display: flex;
     gap: 40px;
     align-items: center;
