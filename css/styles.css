@@ -5,8 +5,8 @@
   --fontsize-body: clamp(1rem, 1rem + 4vw, 1.7rem);
   --fontfam-body: "Cabin", sans-serif;
   --fontfam-title: "Finger Paint", sans-serif;
-  --primary-text-color: #003b32;
-  --background-color: #f4ebd6;
+  --primary-text-color: #16404D;
+  --background-color: #F8F5E9; 
 }
 
 * {
@@ -37,7 +37,13 @@ nav img {
 }
 h1 {
   font-size: var(--fontsize-h1);
+  font-family: var(--fontfam-title);
   font-weight: 900;
+  margin-bottom: 24px;
+}
+h2 {
+  font-family: var(--fontfam-title);
+  text-align: left;
   margin-bottom: 24px;
 }
 hr {
@@ -65,30 +71,31 @@ a {
 .container {
   margin-top: 80px;
 }
-.satisfy-regular {
-  font-family: var(--fontfam-title);
-}
 .prensentation .title {
   font-size: 1.5rem;
   font-weight: bold;
   padding-bottom: 25px;
 }
 /* project */
+.projects {
+  padding: 32px 24px;
+}
 .projects-container {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
   gap: 32px;
-  padding: 32px;
 }
 .project {
   width: 100%;
-  background: #fff;
+  background: #D0DDD0;
   border-radius: 8px;
-  padding: 0 0 16px;
-  max-height: 300px;
+  height: 268px;
 }
 .project img {
   width: 100%;
+  height: 165px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 1rem 1rem 0 0;
 }
 .project-back-side {
   display: none;
@@ -98,6 +105,9 @@ a {
 }
 .project-front-side {
   text-align: left;
+}
+.project-content {
+  padding: 16px;
 }
 .project-headline {
   font-size: 1.5rem;
@@ -114,7 +124,10 @@ a {
 .project:hover .project-back-side {
   display: grid;
 }
-@media (min-width: 768px) {
+footer {
+  font-size: 16px;
+}
+@media (min-width: 500px) {
   .presentation {
     min-height: unset;
   }
@@ -122,7 +135,7 @@ a {
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1000px) {
   nav {
     height: 140px;
   }
@@ -133,8 +146,17 @@ a {
   .prensentation {
     padding: 40px;
   }
+  .projects-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .project {
+    height: 303px;
+  }
+  .project img {
+    height: 200px;
+  }
 }
-@media (min-width: 1024px) and (max-height: 1024px) {
+@media (min-width: 1000px) and (max-height: 1024px) {
   .presentation {
     display: flex;
     gap: 40px;
