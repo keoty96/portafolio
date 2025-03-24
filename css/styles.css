@@ -5,8 +5,10 @@
   --fontsize-body: clamp(1rem, 1rem + 4vw, 1.7rem);
   --fontfam-body: "Cabin", sans-serif;
   --fontfam-title: "Finger Paint", sans-serif;
-  --primary-text-color: #16404D;
-  --background-color: #F8F5E9; 
+  --background-color: #e2c99e; 
+  --primary-text-color: #852736;
+  --secondary-color: #c1121f;
+  --tertiary-color: #fdf0d5;
 }
 
 * {
@@ -52,6 +54,9 @@ hr {
   width: 4%;
   margin: 75px auto;
 }
+.space {
+  height: 80px;
+}
 .presentation {
   min-height: calc(100vh - 80px);
   padding: 32px 24px;
@@ -86,16 +91,20 @@ a {
 }
 .project {
   width: 100%;
-  background: #D0DDD0;
+  background: var(--tertiary-color);
   border-radius: 8px;
-  height: 268px;
+  color: var(--secondary-color);
+  padding: 16px;
+}
+.project a {
+  color: var(--secondary-color);
+  text-decoration: underline;
 }
 .project img {
   width: 100%;
   height: 165px;
   object-fit: cover;
   object-position: top;
-  border-radius: 1rem 1rem 0 0;
 }
 .project-back-side {
   display: none;
@@ -105,9 +114,6 @@ a {
 }
 .project-front-side {
   text-align: left;
-}
-.project-content {
-  padding: 16px;
 }
 .project-headline {
   font-size: 1.5rem;
@@ -124,8 +130,32 @@ a {
 .project:hover .project-back-side {
   display: grid;
 }
+.contact {
+  background: var(--primary-text-color);
+  color: var(--tertiary-color);
+  padding: 32px;
+  text-align: left;
+  display: grid;
+}
+.contact .container {
+  width: 100%;
+  margin-top: 0;
+}
+.contact .say-hello {
+  background: var(--tertiary-color);
+  padding: 16px;
+  border-radius: 1rem;
+  font-size: 1rem;
+  width: fit-content;
+  color: var(--secondary-color);
+  display: block;
+}
 footer {
   font-size: 16px;
+  padding: 24px;
+}
+footer * {
+  margin: 0;
 }
 @media (min-width: 500px) {
   .presentation {
@@ -133,14 +163,18 @@ footer {
   }
   .projects-container {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .project {
+    padding: 24px;
   }
 }
 @media (min-width: 1000px) {
-  nav {
-    height: 140px;
+  nav, .space {
+    height: 100px;
   }
   .container {
-    margin: 140px auto 0;
+    margin: 0 auto;
     max-width: 1200px;
   }
   .prensentation {
@@ -149,9 +183,9 @@ footer {
   .projects-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .project {
+  /*.project {
     height: 303px;
-  }
+  }*/
   .project img {
     height: 200px;
   }
