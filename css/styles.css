@@ -37,6 +37,10 @@ nav {
 nav img {
   height: 90%;
 }
+nav .say-hello {
+  position: fixed;
+  right: 20px;
+}
 h1 {
   font-size: var(--fontsize-h1);
   font-family: var(--fontfam-title);
@@ -69,9 +73,7 @@ p {
   margin-bottom: 16px;
 }
 a {
-  text-decoration: none;
   font-weight: bold;
-  color: #4f98ca;
 }
 .container {
   margin-top: 80px;
@@ -90,6 +92,7 @@ a {
   gap: 32px;
 }
 .project {
+  cursor: pointer;
   width: 100%;
   background: var(--tertiary-color);
   border-radius: 8px;
@@ -98,18 +101,38 @@ a {
 }
 .project a {
   color: var(--secondary-color);
+  margin-top: 16px;
+}
+.project a:hover {
   text-decoration: underline;
 }
 .project img {
   width: 100%;
-  height: 165px;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  height: 7rem;
 }
+.project-logo {
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  margin-bottom: 10px;
+}
+.project-logo svg {
+  height: 5rem;
+  width: 85%;
+}
+.penske svg path {
+  fill: #002496;
+}
+/* .penske .project-logo {
+  background: #002496; 
+} */
 .project-back-side {
   display: none;
   font-size: 1rem;
-  padding: 24px;
+  padding: 16px;
   text-align: left;
 }
 .project-front-side {
@@ -124,6 +147,9 @@ a {
 .project-tools {
   font-size: 0.8rem;
 }
+.project:hover {
+  box-shadow: 6px 4px 12px 0px rgba(23, 23, 23, 0.75);
+}
 .project:hover .project-front-side {
   display: none;
 }
@@ -136,12 +162,14 @@ a {
   padding: 32px;
   text-align: left;
   display: grid;
+  position: relative;
 }
 .contact .container {
   width: 100%;
   margin-top: 0;
+  position: relative;
 }
-.contact .say-hello {
+.say-hello {
   background: var(--tertiary-color);
   padding: 16px;
   border-radius: 1rem;
@@ -149,6 +177,19 @@ a {
   width: fit-content;
   color: var(--secondary-color);
   display: block;
+}
+.say-hello:hover {
+  box-shadow: 6px 4px 12px 0px rgba(23, 23, 23, 0.75);
+}
+.icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 1rem;
+}
+.icons a {
+  color: var(--tertiary-color);
 }
 footer {
   font-size: 16px;
@@ -186,9 +227,9 @@ footer * {
   /*.project {
     height: 303px;
   }*/
-  .project img {
+  /* .project img {
     height: 200px;
-  }
+  } */
 }
 @media (min-width: 1000px) and (max-height: 1024px) {
   .presentation {
